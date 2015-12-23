@@ -1,4 +1,4 @@
-# cljsとツクールMVを使ってブラゲを作った
+# cljsとツクールMVを使ってブラゲ作った
 
 これは [Clojure Advent Calendar 2015](http://qiita.com/advent-calendar/2015/clojure) の23日目の記事です。
 
