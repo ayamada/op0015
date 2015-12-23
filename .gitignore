@@ -1,0 +1,32 @@
+/pom.xml
+/lib/
+/classes/
+/target
+/.lein-*
+
+/resources/public/cljs
+/figwheel_server.log
+
+# ツクールMV由来のソースファイルおよびアセットファイルは、
+# 規約により公開リポジトリに含められない為、ここにどんどん追記する
+/resources/public/icon/icon.png
+/resources/public/audio/
+/resources/public/img/animations/
+/resources/public/img/battlebacks1/
+/resources/public/img/battlebacks2/
+/resources/public/img/characters/
+/resources/public/img/enemies/
+/resources/public/img/faces/
+/resources/public/img/parallaxes/
+/resources/public/img/pictures/
+/resources/public/img/sv_actors/
+/resources/public/img/sv_enemies/
+/resources/public/img/system/
+/resources/public/img/tilesets/
+/resources/public/img/titles1/
+#/resources/public/img/titles2/ # 自作タイトルのみ収納する事で回避
+/resources/public/js/libs/
+/resources/public/js/main.js
+#/resources/public/js/plugins/ # 自作プラグインのみ収納する事で回避
+/resources/public/js/plugins.js
+/resources/public/js/rpg_*.js
