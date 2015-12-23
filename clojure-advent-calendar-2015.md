@@ -1,10 +1,12 @@
-# タイトル未定(TODO: 気の利いたタイトルを考える)
+# オッサンの冒険
 
 これは [Clojure Advent Calendar 2015](http://qiita.com/advent-calendar/2015/clojure) の23日目の記事です。
 
 この記事では、[RPGツクールMV](https://tkool.jp/mv/)を使う手順を解説します。
 
 ゲーム作成に興味のない人はこの記事を読む必要はありません。
+
+ゲームだけ遊びたい人はこちらからどうぞ → <a href="http://vnctst.tir.jp/op0015/" target="_blank">http://vnctst.tir.jp/op0015/</a>
 
 
 ## 目次
@@ -16,8 +18,8 @@
 - [cljsプロジェクトの作成](#cljsプロジェクトの作成)
 - [成果物](#成果物)
 - [解説](#解説)
--- [ツクールMVからcljsを呼ぶ](#ツクールmvからcljsを呼ぶ)
--- [cljsからツクールMVの機能を使う](#cljsからツクールmvの機能を使う)
+    - [ツクールMVからcljsを呼ぶ](#ツクールmvからcljsを呼ぶ)
+    - [cljsからツクールMVの機能を使う](#cljsからツクールmvの機能を使う)
 - [ツクールMVを使ってみた感想](#ツクールmvを使ってみた感想)
 - [今後の課題](#今後の課題)
 
@@ -78,7 +80,7 @@
 
 ## 成果物
 
-- http://vnctst.tir.jp/op0015/
+- <a href="http://vnctst.tir.jp/op0015/" target="_blank">http://vnctst.tir.jp/op0015/</a> から遊べます。
 
 - ソースは https://github.com/ayamada/op0015 に置いてます。
     - ただし、ツクールMV由来のコード/画像/データ等はツクールMVの使用許諾契約書によりゲーム外では同梱できない為、抜いてあります。なので、このソースをそのまま持っていっても動きません。すいません。
