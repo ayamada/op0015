@@ -1,4 +1,4 @@
-# オッサンの冒険
+# cljsとツクールMVを使ってブラゲを作った
 
 これは [Clojure Advent Calendar 2015](http://qiita.com/advent-calendar/2015/clojure) の23日目の記事です。
 
@@ -6,7 +6,7 @@
 
 ゲーム作成に興味のない人はこの記事を読む必要はありません。
 
-ゲームだけ遊びたい人はこちらからどうぞ → <a href="http://vnctst.tir.jp/op0015/" target="_blank">http://vnctst.tir.jp/op0015/</a>
+ゲームだけ遊びたい人はこちらからどうぞ → h<a href="http://vnctst.tir.jp/op0015/" target="_blank">ttp://vnctst.tir.jp/op0015/</a>
 
 
 ## 目次
@@ -80,11 +80,11 @@
 
 ## 成果物
 
-- <a href="http://vnctst.tir.jp/op0015/" target="_blank">http://vnctst.tir.jp/op0015/</a> から遊べます。
+- h<a href="http://vnctst.tir.jp/op0015/" target="_blank">ttp://vnctst.tir.jp/op0015/</a> から遊べます。
 
 - ソースは https://github.com/ayamada/op0015 に置いてます。
     - ただし、ツクールMV由来のコード/画像/データ等はツクールMVの使用許諾契約書によりゲーム外では同梱できない為、抜いてあります。なので、このソースをそのまま持っていっても動きません。すいません。
-        - ツクールMVを持ってる方なら、各ファイルを適当にそれらしく配置すれば動く筈です。具体的にどのファイル/ディレクトリを追加すればいいのかは[.gitignore](https://github.com/ayamada/op0015/blob/master/.gitignore)を見てください。
+        - ツクールMVを持ってる方なら、各ファイルを適当にそれらしく配置すれば動く筈です。具体的にどのファイル/ディレクトリを追加すればいいのかは [.gitignore](https://github.com/ayamada/op0015/blob/master/.gitignore) を見てください。
         - 筆者はfigwheelを利用しているので、開発時には `lein clean && rlwrap lein figwheel dev` を実行して、figwheelサーバを起動させておいてください。この状態でツクールMVから「テストプレイ」を実行すると、figwheelの自動リロード機能等が有効な状態でテストプレイができます。
           - デプロイ時には忘れずに `lein clean && lein with-profile prod cljsbuild once prod` を実行して、prod版ビルドにしてからデプロイしてください。
 
@@ -106,9 +106,9 @@
             - 時間があればpixi v2系とかの解説記事を書きたかったが、そんな時間はなかった
         - あとは、[RPGツクールMV Advent Calendar 2015](http://qiita.com/advent-calendar/2015/rmmv)にも参考になる記事が何個かある
     - これらのライブラリを利用する場合は、プロジェクトを `:optimizations :advanced` でコンパイルする予定があるならば、忘れずにexternsを書く事。
-        - pixi v3系では[Google Closure Compiler向けのexterns](https://github.com/pixijs/pixi-closure-compiler)が公開されているのだが、ツクールMVで採用されているpixi v2系にはこのexternsはあまり使えないので、自分で用意する必要がある。
+        - pixi v3系では[Google Closure Compiler向けのexterns](https://github.com/pixijs/pixi-closure-compiler)が公開されているのだが、ツクールMVで採用されているpixi v2系には対応するexternsは存在しない為、自分で用意する必要がある。
 
-- 今回は時間がなかったのでこの方式は使ってない。が、問題なく利用できるだろう。
+- 今回は時間がなかったのでこの方式は使ってない。が、特に問題なく利用できるだろう。
 
 
 ## ツクールMVを使ってみた感想
