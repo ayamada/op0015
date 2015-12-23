@@ -3,7 +3,7 @@
 (def short-title "オッサン")
 (def game-url "http://vnctst.tir.jp/op0015/")
 (def intro-url "https://github.com/ayamada/op0015")
-(def version "1.0.1")
+(def version "1.0.2")
 (def port-dev 8015)
 (def port-fw 9015)
 (def docroot-in-resources "public")
