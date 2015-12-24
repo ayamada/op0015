@@ -4,7 +4,7 @@
 /target
 /.lein-*
 
-/resources/public/cljs
+/resources/public/cljs/
 /figwheel_server.log
 
 # ツクールMV由来のソースファイルおよびアセットファイルは、

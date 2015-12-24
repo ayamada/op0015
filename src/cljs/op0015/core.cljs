@@ -160,7 +160,6 @@
       (goog.style/setStyle dom "display" "none")
       (goog.style/setStyle dom "vertical-align" "middle")
       (.addEventListener dom "click" h false)
-      ;(.addEventListener dom "touchend" h false) ; 必要かどうか不明
       (goog.dom/appendChild parent dom)
       dom)))
 
@@ -193,7 +192,6 @@
     (goog.style/setStyle button "font-size" "2em")
     (set! (.-innerHTML button) button-label)
     (.addEventListener button "click" h false)
-    ;(.addEventListener button "touchend" h false) ; 必要かどうか不明
     (goog.dom/appendChild div button)
     div))
 
