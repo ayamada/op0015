@@ -22,6 +22,7 @@
     - [cljsからツクールMVの機能を使う](#cljsからツクールmvの機能を使う)
 - [ツクールMVを使ってみた感想](#ツクールmvを使ってみた感想)
 - [今後の課題](#今後の課題)
+- [おまけ：cljs上でのevalについて](#おまけcljs上でのevalについて)
 
 
 ## 概要
@@ -136,5 +137,51 @@
 
 - 面白いゲームを作る
     - クソゲーでは駄目です！！！！！
+
+
+## おまけ：cljs上でのevalについて
+
+上記成果物内で利用している、`eval`機能についてのメモです。
+
+- 実装時に参考にしたurl
+    - http://swannodette.github.io/2015/07/29/clojurescript-17/
+    - http://yogthos.net/posts/2015-11-12-ClojureScript-Eval.html
+    - [figwheelのソース](https://github.com/bhauman/lein-figwheel)
+
+```
+(require 'cljs.js)
+(require 'cljs.env)
+
+(when-not (aget js/cljs "user")
+  (aset js/cljs "user" (js-obj)))
+(set! *print-fn* (fn [& _] nil))
+(set! *print-err-fn* (fn [& _] nil))
+
+(defn cljs-eval [s-expr]
+  (cljs.js/eval (cljs.js/empty-state)
+                s-expr
+                {:eval cljs.js/js-eval :context :expr}
+                identity))
+
+(comment
+  (cljs-eval '(+ 1 2)) => 3
+  (cljs-eval '(def a 1))
+  (cljs-eval '(inc a)) => 2
+  )
+```
+
+- `:optimizations :advanced` だと動かない。常にエラーになる。つまり最適化は最善で `:optimizations :simple` になる。
+- 上記の `:optimizations :advanced` が使えない事に加え、 `cljs.js` 名前空間等が組み込まれて肥大化する為、コンパイル後のjsファイルのサイズが6Mとかになる(通常なら、1Mはまず越えない)。
+- 謎のテクノロジーによって、`def`, `defn`等のspecial formや、`when`, `and`等のmacro類も普通に動く。
+    - もし `(+ 1 2)` とかは動くのに `(def a 1)` とかが動かない場合は、以下を確認する(具体的な対応コードは上記を参照)
+        - `js/cljs.user` が `nil` ではなく、 `#js {}` になってなくてはならない
+        - `*print-fn*` と `*print-err-fn*` をきちんと自前で設定する必要がある(デフォルトでは例外を投げるだけのfnが設定されている)
+            - figwheel経由で起動するとこの辺りが勝手に適切に設定されるのだが、figwheel無しで起動するとこの辺りが駄目な状態のままになるので、figwheelのソースを調べた結果、こういう事だと判明した
+
+個人的な結論：
+
+- 動く事は動くが、実用には色々と厳しい(少なくともブラゲ内で使う事を考えた場合は。node.js内で動かすとかならアリかもしれない)
+
+
 
 
