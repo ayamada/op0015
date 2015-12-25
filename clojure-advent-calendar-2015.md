@@ -170,7 +170,8 @@
   )
 ```
 
-- `:optimizations :advanced` だと動かない。常にエラーになる。つまり最適化は最善で `:optimizations :simple` になる。
+- `:optimizations :advanced` だと動かない。clojure組み込みの関数等を参照しようとするとエラーになる。つまり最適化は最善で `:optimizations :simple` になる。
+    - ただ、 http://swannodette.github.io/2015/07/29/clojurescript-17/ のページ内で動いている同様のコードは、 `:optimizations :advanced` でコンパイルされているように見える。何か上手いやり方があるのか？
 - 上記の `:optimizations :advanced` が使えない事に加え、 `cljs.js` 名前空間等が組み込まれて肥大化する為、コンパイル後のjsファイルのサイズが6Mとかになる(通常なら、1Mはまず越えない)。
 - 謎のテクノロジーによって、`def`, `defn`等のspecial formや、`when`, `and`等のmacro類も普通に動く。
     - もし `(+ 1 2)` とかは動くのに `(def a 1)` とかが動かない場合は、以下を確認する(具体的な対応コードは上記を参照)
